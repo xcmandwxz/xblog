@@ -15,12 +15,7 @@
 macOS/Win10系统+Idea开发+Maven构建+Git版本控制
 #### 前端：
 html+css+javascript;bootstrap+jquery+ajax;
-#### 模板引擎：
-velocity
-#### 开源弹框组件：
-sweetalert
-#### Markdown编辑器：
-Editor.md
+
 #### 容器：
 Tomcat9
 #### 权限：
@@ -34,14 +29,7 @@ Nginx。Nginx作为统一入口，静态资源请求如js、图片、css文件�
 目前配置了2个Tomcat，Nginx采取默认的轮训处理请求。
 #### 全文检索：
 ElasticSearch是流行的全文检索服务器，主要用于博客搜索。Logstash设定了简单的增量导入，从Mysql中定时查询文章内容放入Elasticsearch中，从而提供博客文章全文检索的功能，避免直接查数据库带来较大的开销。
-#### 架构图：
-![](https://pic3.zhimg.com/80/v2-72fae8ab4a314f253d214dcb3f70d80e_hd.jpg)
-## 3.项目部署
-由于主项目是在Mac上开发的，所以对Linux系统比较友好。Github地址：Flowingsun007/LyonBlog ，欢迎点赞~
-### 【分支】：
-* master：本地mac上开发，同步更新的分支
-* centOS：用于在阿里云服务器上的分支，基本和master分支类似，有个别配置如jdbc.properties、log4j.properties、EmailService.java(发送注册邮件)有些许不同
-* windows：仅仅是为了跑起来而新建的此分支，不保证及时更新。BTW:我发现mac上看的前端效果比较好看，到windows上就比较丑了....我也很无奈~
+
 ### 【项目标准配置】：
 * 0.JDK1.8
 * 1.Mysql5.7
