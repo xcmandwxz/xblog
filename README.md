@@ -12,16 +12,15 @@
 个人中心，查看收藏的文章、用户上传图片、照片墙。
 ## 2.技术栈
 #### 开发环境：
-macOS/Win10系统+Idea开发+Maven构建+Git版本控制
+Win10系统+Idea开发+Maven构建+Git版本控制
 #### 前端：
 html+css+javascript;bootstrap+jquery+ajax;
 
 #### 容器：
 Tomcat9
-#### 权限：
-Apache Shrio
+
 #### 后端：
-Spring+SpringMVC+Mybatis+Mysql+Druid
+Spring+SpringMVC+Mybatis+Mysql
 #### 缓存+session管理：
 Redis。由于2个Tomcat可能部署在不同的服务器上，故涉及到session共享的问题，此处用redis来管理所有session,同时redis兼缓存一些文章分类信息、标签信息等。
 #### 反向代理+动静分离：
@@ -30,13 +29,7 @@ Nginx。Nginx作为统一入口，静态资源请求如js、图片、css文件�
 #### 全文检索：
 ElasticSearch是流行的全文检索服务器，主要用于博客搜索。Logstash设定了简单的增量导入，从Mysql中定时查询文章内容放入Elasticsearch中，从而提供博客文章全文检索的功能，避免直接查数据库带来较大的开销。
 
-### 【项目标准配置】：
-* 0.JDK1.8
-* 1.Mysql5.7
-* 2.Tomcat9(2个)
-* 3.Nginx1.14.0
-* 4.Redis4.0.10
-* 5.Elaticsearch、Logstash——6.4.2
+
 #### Mysql配置
 * a.数据库连接：resources文件夹下的jdbc.properties
 * b.数据库的sql包括ddl和dml，放在项目resources文件夹下。
@@ -57,7 +50,6 @@ Nginx+Redis+2个Tomcat+Elasticsearch+Logstash
 Nginx+Redis+1个Tomcat
 #### 启动顺序：
 首先安装好Mysql，Mysql的表和数据建好、安装和配置Tomcat、Nginx、Redis，然后就可以启动了。
-Nginx和Redis先启动，然后启动Tomcat，在Idea中可以直接启动Tomcat、或者手动打war包放入Tomcat中运行。
-##### Tomcat启动完成后再启动Elasticsearch+logstash。Elasticsearch+logstash是可选项，可以不启动。
+
 ### 【文件夹结构】
 ![](https://pic1.zhimg.com/80/v2-a95cec3239527b265b191c368e888e04_hd.jpg)
